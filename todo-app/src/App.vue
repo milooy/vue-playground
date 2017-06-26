@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <hello></hello> -->
     <create-todo @create-todo="createTodo"></create-todo>
     <todo-list v-bind:todos="todos"></todo-list>
   </div>
@@ -39,11 +37,9 @@ export default {
     };
   },
   methods: {
-    createTodo(title) {
-      console.log("createTodo")
-      this.todos.push({
-        title, done:false,
-      })
+    createTodo(todo) {
+      const title = todo.title, project = todo.project;
+      this.todos.push({title, project, done:false,});
     }
   }
 }
